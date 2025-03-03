@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         int[] first = {20, 10, 10, 15};
 
-        for (int i = 0; i < 99; i++) {
+        int i = 0;
+        while (i < 99) {
             Rectangle r = new Rectangle();
             int l = r.getLength();
             int w = r.getWidth();
@@ -13,8 +14,15 @@ public class Main {
 
             int[] other = {l, w, x, y};
 
-            Percentage p = new Percentage();
-            System.out.println(r);
+            Percentage p = new Percentage(first, other);
+            p.overLap();
+            i++;
         }
+
+        int colliding = Percentage.getCounter();
+        System.out.println(colliding);
+        double percent = (double) colliding /(i+1) * 100;
+
+        System.out.println("Percent: " + percent);
     }
 }
