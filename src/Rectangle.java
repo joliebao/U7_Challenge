@@ -5,10 +5,10 @@ public class Rectangle {
     private int y;
 
     public Rectangle(){
-        length = (int) (Math.random() * 40) + 10;
-        width = (int) (Math.random() * 5) + 5;
-        x = (int) (Math.random() * 50) + 1;
-        y = (int) (Math.random() * 50) + 1;
+        length = (int) (Math.random() * 39) + 10;
+        width = (int) (Math.random() * 4) + 5;
+        x = (int) (Math.random() * 51);
+        y = (int) (Math.random() * 51);
     }
 
     public int getLength(){
