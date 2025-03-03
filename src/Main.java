@@ -5,7 +5,7 @@ public class Main {
         int[] first = {20, 10, 10, 15};
 
         int i = 0;
-        while (i < 99) {
+        while (i < 9999999) {
             Rectangle r = new Rectangle();
             int l = r.getLength();
             int w = r.getWidth();
@@ -23,6 +23,6 @@ public class Main {
         System.out.println(colliding);
         double percent = (double) colliding /(i+1) * 100;
 
-        System.out.println("Percent: " + percent);
+        System.out.println("Percent: " + percent + "%");
     }
 }
