@@ -21,7 +21,7 @@ public class Main {
 
         int colliding = Percentage.getCounter();
         System.out.println(colliding);
-        double percent = (double) colliding /(i+1) * 100;
+        double percent = (double) colliding / (i+1) * 100;
 
         System.out.println("Percent: " + percent + "%");
     }

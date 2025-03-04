@@ -9,12 +9,20 @@ public class Percentage {
     }
     // l, w, x, y
     public void overLap() {
-        if (original[2] <= newOne[2] && newOne[2] <= (original[2] + original[1])){ // if x is in range
-            // need a y condition
-            counter++;
-        } else if (original[3] <= newOne[3] && newOne[3] <= (original[3] + original[0])) { // if y is in range
-            // need an x condition
-            counter++;
+        // left side
+        if (newOne[2] <= original[2] && original[2] <= (newOne[2] + newOne[1])){ // if x is in range
+             if (newOne[3] >= original[3] && original[3] >= (newOne[3] - newOne[0])) { // if y is in range
+                 counter++;
+             }
+        // right side
+        } else if (newOne[2] <= (original[2] + original[1])){
+            if ((original[2] + original[1]) <= (newOne[2] + newOne[1])) {
+                if (newOne[3] >= (original[3] - original[0])){
+                    if ((original[3] - original[0]) >= (newOne[3] - newOne[0])){ // if y is in range
+                        counter++;
+                    }
+                }
+            }
         }
     }
 
