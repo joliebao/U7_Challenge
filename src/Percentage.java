@@ -8,20 +8,29 @@ public class Percentage {
         newOne = n;
     }
     // l, w, x, y
+    // 0, 1, 2, 3
     public void overLap() {
-        // left side
-        if (newOne[2] <= original[2] && original[2] <= (newOne[2] + newOne[1])){ // if x is in range
-             if (newOne[3] >= original[3] && original[3] >= (newOne[3] - newOne[0])) { // if y is in range
-                 counter++;
-             }
-        // right side
-        } else if (newOne[2] <= (original[2] + original[1])){
-            if ((original[2] + original[1]) <= (newOne[2] + newOne[1])) {
-                if (newOne[3] >= (original[3] - original[0])){
-                    if ((original[3] - original[0]) >= (newOne[3] - newOne[0])){ // if y is in range
-                        counter++;
-                    }
-                }
+        int origX1 = original[2];
+        int origY1 = original[3];
+        int origX2 = original[2] + original[1];
+        int origY2 = original[3] - original[0];
+
+        int newX1 = newOne[2];
+        int newY1 = newOne[3];
+        int newX2 = newOne[2] + newOne[1];
+        int newY2 = newOne[3] - newOne[0];
+
+        if (newX1 <= origX1 && origX1 <= newX2){
+            if (newY2 <= origY1 && origY1 <= newY1){ // top left
+                counter ++;
+            } else if (newY2 <= origY2 && origY2 <= newY1) { // bottom left
+                counter++;
+            }
+        } else if (newX1 <= origX2 && origX2 <= newX2) {
+            if (newY2 <= origY1 && origY1 <= newY1) { // top right
+                counter++;
+            } else if (newY2 <= origY2 && origY2 <= newY1) { // bottom right
+                counter++;
             }
         }
     }
